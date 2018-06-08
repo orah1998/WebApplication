@@ -36,14 +36,9 @@
                     <br /><br />
                     <center>
 
-                        
-                        <button id="@Model.list[i].ToString()" class="btn btn-primary">
-                            @Html.ActionLink("Edit", "Edit", new { mip = Model.list[i].ToString() })
-                        </button>
-                            
-                            |
-                                                @Html.ActionLink("Delete", "Delete", new { mip = Model.list[i].ToString() })
-</center>
+                        @Html.ActionLink("Delete", "Delete","Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width="10" }) |
+                        @Html.ActionLink("View", "View", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-primary", @width = "10" })
+                    </center>
                 </div>
             </td>
 

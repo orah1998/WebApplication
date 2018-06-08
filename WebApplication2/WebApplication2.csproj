@@ -149,6 +149,7 @@
     <Compile Include="Controllers\ConfigController.cs" />
     <Compile Include="Controllers\FirstController.cs" />
     <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\PhotoController.cs" />
     <Compile Include="Controllers\SingletonClient.cs" />
     <Compile Include="ENUMS\LogData.cs" />
     <Compile Include="ENUMS\MessageTypeEnum.cs" />
@@ -177,12 +178,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\First\Edit.cshtml" />
+    <Content Include="Views\Photo\Delete.cshtml" />
     <Content Include="Views\First\Error.cshtml" />
     <Content Include="Views\First\Config.cshtml" />
     <Content Include="scripts\jquery-3.0.0.min.map" />
     <Content Include="scripts\jquery-3.0.0.slim.min.map" />
-    <Content Include="Views\First\Delete.cshtml" />
+    <Content Include="Views\Photo\Delete222.cshtml" />
     <Content Include="Views\First\Confirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
