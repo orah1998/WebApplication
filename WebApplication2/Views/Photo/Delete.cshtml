@@ -16,12 +16,9 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Photo</h4>
+        <h4>Are you sure you want to delete the picture ?</h4>
         <hr />
         <div class="form-group">
-            <center>
-                @*@Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            </center>
             <br /><br />
             <center>
                 <h2> @Model.deleting  <br /><br /> </h2>
@@ -43,7 +40,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Photos")
+    @Html.ActionLink("Back to List", "Photos","Photo")
 </div>
 <script>
 

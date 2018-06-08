@@ -142,7 +142,7 @@
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Log\Log.cshtml" />
-    <Content Include="Views\First\Photos.cshtml" />
+    <Content Include="Views\Photo\Photos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -183,7 +183,7 @@
     <Content Include="Views\First\Config.cshtml" />
     <Content Include="scripts\jquery-3.0.0.min.map" />
     <Content Include="scripts\jquery-3.0.0.slim.min.map" />
-    <Content Include="Views\Photo\Delete222.cshtml" />
+    <Content Include="Views\Photo\view.cshtml" />
     <Content Include="Views\First\Confirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

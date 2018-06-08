@@ -79,11 +79,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET: First/Photos
-        public ActionResult Photos()
-        {
-            Photo pics = new Photo();
-            return View(pics);
-        }
+        
 
         // GET: First/Create
         public ActionResult Create()

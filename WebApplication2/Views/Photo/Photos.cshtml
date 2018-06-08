@@ -34,11 +34,13 @@
 
                     @Html.DisplayFor(modelitem => Model.listOfDates[i])
                     <br /><br />
-                    <center>
+                          <center>
 
-                        @Html.ActionLink("Delete", "Delete","Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width="10" }) |
-                        @Html.ActionLink("View", "View", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-primary", @width = "10" })
-                    </center>
+                              @Html.ActionLink("View", "View","Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-primary", @width = "10" })   
+
+                              @Html.ActionLink("Delete", "Delete", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width = "10" })
+
+                          </center>
                 </div>
             </td>
 
