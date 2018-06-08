@@ -1,0 +1,56 @@
+﻿@model WebApplication2.Models.Photo
+
+@{
+    ViewBag.Title = "Photos";
+}
+
+<h2>Photos</h2>
+
+
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+
+
+<table class="table">
+
+
+    <tr>
+        @{
+
+            for (int i=0;i<Model.list.Count;i++)
+            {
+        <td>
+
+            <div class="navbar-header">
+
+                @Html.DisplayFor(modelitem => Model.list[i])
+                <br />
+                <img class="img-rounded" style="border-radius:50%" src=@Model.list[i].ToString() alt="">
+                <br /><br />
+
+                @Html.DisplayFor(modelitem => Model.listOfDates[i])
+                <br /><br />
+                      <center>
+
+                          <button id="@Model.list[i].ToString()" class="btn btn-primary">Primary button</button>
+                          @Html.ActionLink("Edit", "Edit", new { mip = Model.list[i].ToString() }) |
+                          @Html.ActionLink("Delete", "Delete", new { mip = Model.list[i].ToString() })
+                      </center>
+                </div>
+        </td>
+
+            }
+
+        }
+
+
+
+
+
+
+    </tr>
+</table>

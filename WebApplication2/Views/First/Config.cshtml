@@ -1,0 +1,73 @@
+﻿@model WebApplication2.Models.ConfigClient
+@{
+    ViewBag.Title = "Config";
+}
+
+<h2>Configuration Page </h2>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                <form>
+                    <br />
+                    Handler:
+                    <br />
+                    @foreach (var item in Model.Handler)
+                    {
+                      @Html.ActionLink(@item.ToString(), "Confirmation",new { mip = item.ToString() }) ;
+                <br />
+                    }
+                   
+
+
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+                Output Directory:
+                <br />
+                @Html.DisplayFor(model => model.OutputDir, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <br />
+                Log Name:
+                <br />
+                @Html.DisplayFor(model => model.LogName, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <br />
+                Source Name:
+                <br />
+                @Html.DisplayFor(model => model.SourceName, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <br />
+                Thumbnail Size:
+                <br />
+                @Html.DisplayFor(model => model.ThumbnailSize, new { htmlAttributes = new { @class = "form-control" } })
+            </td>
+        </tr>
+
+
+
+
+
+
+    </table>
+
+</div>
