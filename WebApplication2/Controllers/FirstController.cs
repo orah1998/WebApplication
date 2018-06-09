@@ -106,13 +106,7 @@ namespace WebApplication2.Controllers
 
 
 
-
-        public ActionResult DeletePhoto()
-        {
-            needs.deletePhoto();
-            return null;
-        }
-
+        
 
 
         public ActionResult Edit(string mip)

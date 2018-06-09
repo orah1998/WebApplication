@@ -19,38 +19,40 @@
 
 
     <tr>
-        @{
+        <div class="container body-content">
+            @{
 
-        for (int i = 0; i < Model.list.Count; i++)
-        {
-            <td>
+            for (int i = 0; i < Model.list.Count; i++)
+            {
+                <td>
 
-                <div class="navbar-header">
+                    <div class="body-content">
 
-                    @Html.DisplayFor(modelitem => Model.list[i])
-                    <br />
-                    <img class="img-rounded" style="border-radius:50%" src=@Model.list[i].ToString() alt="">
-                    <br /><br />
+                        @Html.DisplayFor(modelitem => Model.list[i])
+                        <br />
+                        <img class="img-rounded" style="border-radius:50%" src=@Model.list[i].ToString() alt="">
+                        <img src="@Model.list[i]" />
+                        <br /><br />
 
-                    @Html.DisplayFor(modelitem => Model.listOfDates[i])
-                    <br /><br />
-                          <center>
+                        @Html.DisplayFor(modelitem => Model.listOfDates[i])
+                        <br /><br />
+                        <center>
 
-                              @Html.ActionLink("View", "View","Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-primary", @width = "10" })   
+                            @Html.ActionLink("View", "View", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-primary", @width = "10" })
 
-                              @Html.ActionLink("Delete", "Delete", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width = "10" })
+                            @Html.ActionLink("Delete", "Delete", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width = "10" })
 
-                          </center>
-                </div>
-            </td>
-
-    }
+                        </center>
+                    </div>
+                </td>
 
         }
 
+            }
 
 
 
 
+            </div>
     </tr>
 </table>

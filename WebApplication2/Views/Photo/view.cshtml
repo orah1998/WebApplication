@@ -15,7 +15,9 @@
 {
     <h2> @Model.deleting  <br /><br /> </h2>
     <img src="@Model.deleting" />
-    @Html.DisplayFor(Model.PhotoDates().ToString())
+
+    <br /><br />
+    @Html.DisplayFor(m => m.date)
 
 
 

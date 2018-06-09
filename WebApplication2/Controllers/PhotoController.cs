@@ -29,13 +29,23 @@ namespace WebApplication2.Controllers
             return View(needs);
         }
 
+
+
+        public ActionResult DeletePhoto()
+        {
+            needs.deletePhoto();
+            return null;
+        }
+
+
+
         public ActionResult view(string mip)
         {
 
             string res = "";
             foreach (string item in mip.Split('\\'))
             {
-                if (!item.Contains("thumbnails"))
+                if (!item.Contains("Thumbnails"))
                 {
                     res += item + "\\";
                 }
@@ -44,7 +54,7 @@ namespace WebApplication2.Controllers
             res = res.Remove(res.Length - 1);
 
 
-            needs = new DeletePhotoNeeds(mip);
+            needs = new DeletePhotoNeeds(res);
             return View(needs);
         }
 
