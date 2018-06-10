@@ -22,14 +22,15 @@
         <div class="container body-content">
             @{
 
-            for (int i = 0; i < Model.list.Count; i++)
-            {
+                for (int i = 0; i < Model.list.Count; i++)
+                {
                 <td>
-                    <div class="body-content">
+                    
 
                         @Html.DisplayFor(modelitem => Model.list[i])
                         <br />
-                        <img src="@Model.list[i].ToString()" />
+                        <h4> @Model.list[i].ToString()</h4>
+                        <img src="@Url.Content(Model.list[i]) " alt="" class="img-circle" width="242" height="200" />
                         <br /><br />
 
                         @Html.DisplayFor(modelitem => Model.listOfDates[i])
@@ -41,13 +42,13 @@
                             @Html.ActionLink("Delete", "Delete", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width = "10" })
 
                         </center>
-                    </div>
+                    
                 </td>
 
-        }
+                    }
 
-            }
-
+                }
+           
 
 
 
