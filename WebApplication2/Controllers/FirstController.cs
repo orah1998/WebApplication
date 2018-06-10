@@ -10,6 +10,7 @@ namespace WebApplication2.Controllers
 {
     public class FirstController : Controller
     {
+
         static List<Employee> employees = new List<Employee>()
         {
           new Employee  { ImagePath = "C:\\Users\\Operu\\Desktop\\Photo\\Naruto.png", LastName = "Aron", Email = "Stam@stam", Salary = 10000, Phone = "08-8888888" },
