@@ -1,0 +1,95 @@
+﻿@model WebApplication2.Models.LogNeeds
+
+@{
+    ViewBag.Title = "Log";
+}
+
+<h2>Log</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>View Of The Log:</h4>
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <table>
+                    <tr>
+                        <td>
+                            @Html.TextBoxFor(m => m.choice, new { @class = "form-control" })
+                       </td>
+                        <td>
+                            <input type="submit" value="GET" id="getIt" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <table border="1" class="table">
+
+
+
+                @{
+
+                  foreach (var item in Model.getListWithENUM())
+                    {
+                <tr>
+                    <td>
+                    @item.LogType.ToString()
+                    </td>
+
+
+                    <td>
+                        @item.LogMessage.ToString()
+                    </td>
+
+                </tr>
+                    }
+
+                    }
+
+
+            </table>
+
+
+
+
+
+
+
+
+        </div>
+        
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ImageWeb","First")
+</div>
+
+
+
+
+<script>
+                $('submit').click(function () {
+                    document.getElementById("getIt").disabled = true;
+                    $.post("@Url.Action("Log")", function () {
+
+                    });
+                });
+
+
+
+</script>
+
+
+
+
+
