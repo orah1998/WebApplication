@@ -20,6 +20,7 @@ namespace WebApplication2.Models
 
         public Photo()
         {
+            try { 
             TcpClient client = new TcpClient();
             IPEndPoint ep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8000);
             client = new TcpClient();
@@ -46,7 +47,14 @@ namespace WebApplication2.Models
             rec(dir);
 
             client.Close();
-
+            }catch(Exception e)
+            {
+                this.OutputDir = @"C:\Users\Operu\Desktop\dest";
+                DirectoryInfo dir = new DirectoryInfo(OutputDir);
+                this.list = new List<string>();
+                this.listOfDates = new List<string>();
+                rec(dir);
+            }
         }
 
 

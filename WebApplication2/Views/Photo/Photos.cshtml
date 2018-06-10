@@ -25,13 +25,11 @@
             for (int i = 0; i < Model.list.Count; i++)
             {
                 <td>
-
                     <div class="body-content">
 
                         @Html.DisplayFor(modelitem => Model.list[i])
                         <br />
-                        <img class="img-rounded" style="border-radius:50%" src=@Model.list[i].ToString() alt="">
-                        <img src="@Model.list[i]" />
+                        <img src="@Model.list[i].ToString()" />
                         <br /><br />
 
                         @Html.DisplayFor(modelitem => Model.listOfDates[i])

@@ -22,7 +22,46 @@ namespace WebApplication2.Models
 
         public void deletePhoto()
         {
+
+            if (this.deleting.Contains("Thumbnails")) { 
+
+            string res = "";
+            foreach (string item in this.deleting.Split('\\'))
+            {
+                if (!item.Contains("Thumbnails"))
+                {
+                    res += item + "\\";
+                }
+            }
+
+            res = res.Remove(res.Length - 1);
+            File.Delete(res);
             File.Delete(this.deleting);
+
+            }
+
+
+            else
+            {
+                string res = "";
+                string[] arr=this.deleting.Split('\\');
+                res += arr[arr.Length - 3] +"\\"+ arr[arr.Length - 2] + "\\" + arr[arr.Length - 1];
+                string res2 = "Thumbnails\\" + res;
+                string getpath="";
+                for (int i = 0; i < arr.Length-3; i++)
+                {
+                    getpath += arr[i]+"\\";
+                }
+                res2 = getpath + res2;
+
+
+                File.Delete(res2);
+                File.Delete(this.deleting);
+            }
+
+
+
+
         }
 
         public void PhotoDates()

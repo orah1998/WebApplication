@@ -20,5 +20,19 @@
     @Html.DisplayFor(m => m.date)
 
 
+    <input type="submit" id="deleteIt" value="Delete" />
 
 }
+
+
+
+    <script>
+  $('#deleteIt').click(function () {
+        $.post("@Url.Action("DeletePhoto")", function () {
+        window.location.href = "Photos";
+        });
+    });
+
+
+
+    </script>
