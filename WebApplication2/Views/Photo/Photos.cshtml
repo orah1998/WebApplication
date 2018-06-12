@@ -26,23 +26,26 @@
                 {
                 <td>
                     
+                        <div class="thumbnail">
+                            
+                                @Html.DisplayFor(modelitem => Model.list[i])
+                                <br />
 
-                        @Html.DisplayFor(modelitem => Model.list[i])
-                        <br />
-                        <h4> @Model.list[i].ToString()</h4>
-                        <img src="@Url.Content(Model.list[i]) " alt="" class="img-circle" width="242" height="200" />
-                        <br /><br />
+                                <img src="@Url.Content(Model.list[i]) " alt="" class="img-circle" width="242" height="200" />
+                                <br /><br />
 
-                        @Html.DisplayFor(modelitem => Model.listOfDates[i])
-                        <br /><br />
-                        <center>
+                                @Html.DisplayFor(modelitem => Model.listOfDates[i])
+                                <br /><br />
+                                <center>
 
-                            @Html.ActionLink("View", "View", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-primary", @width = "10" })
+                                    @Html.ActionLink("View", "View", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-primary", @width = "10" })
 
-                            @Html.ActionLink("Delete", "Delete", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width = "10" })
+                                    @Html.ActionLink("Delete", "Delete", "Photo", new { mip = Model.list[i].ToString() }, new { @class = "btn btn-danger", @width = "10" })
 
-                        </center>
-                    
+                                </center>
+                            
+                        </div>
+
                 </td>
 
                     }

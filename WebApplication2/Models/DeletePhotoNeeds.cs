@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Web;
 
 namespace WebApplication2.Models
@@ -12,11 +15,32 @@ namespace WebApplication2.Models
         public string deleting { get; set; }
         public string date { get; set; }
 
-
-
-        public DeletePhotoNeeds(string del)
+        public DeletePhotoNeeds()
         {
-            this.deleting = del;
+        }
+
+
+
+            public DeletePhotoNeeds(string del)
+        {
+            SingletonClient.Instance.Connect();
+            NetworkStream stream = SingletonClient.Instance.getClient().GetStream();
+            BinaryReader reader = new BinaryReader(stream);
+            BinaryWriter writer = new BinaryWriter(stream);
+
+            JObject obj = new JObject();
+            obj["inst"] = "1";
+            obj["etc"] = "1";
+
+            writer.Write(JsonConvert.SerializeObject(obj));
+
+
+            //waiting for verification
+            string cmd = reader.ReadString();
+            JObject res = JsonConvert.DeserializeObject<JObject>(cmd);
+            string outputdir=res["OutputDir"].ToString() ;
+            this.deleting=getFullPath(outputdir,this.deleting);
+
             PhotoDates();
         }
 
@@ -33,7 +57,7 @@ namespace WebApplication2.Models
                     res += item + "\\";
                 }
             }
-
+             
             res = res.Remove(res.Length - 1);
             File.Delete(res);
             File.Delete(this.deleting);
@@ -72,7 +96,20 @@ namespace WebApplication2.Models
             this.date= ret;
         }
 
+        public string getFullPath(string destPath,string picPath)
+        {
+            string temp="";
+            string[] arr = picPath.Split('\\');
+            for (int i = 2; i < arr.Length; i++)
+            {
+                temp += '\\' + arr[i];
+            }
+            temp = destPath + temp;
 
+            return temp;
+
+
+        }
 
     }
 }

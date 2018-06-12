@@ -70,7 +70,7 @@ namespace WebApplication2.Models
                 {
                     if (pic.DirectoryName.ToString().Contains("Thumbnails")) {
                         string path = pic.DirectoryName.ToString() + "\\" + pic.ToString();
-                        list.Add(path);
+                        list.Add(GetRelaPath(path));
                         DateTime dt = File.GetCreationTime(path);
                         listOfDates.Add(dt.Month.ToString()+"/"+dt.Year.ToString());
                     }
@@ -79,7 +79,43 @@ namespace WebApplication2.Models
             }
         }
 
-        
+
+
+        public string GetRelaPath(string str)
+        {
+            string res = "";
+            int flag = 0;
+            string prevItem = "";
+            foreach (string item in str.Split('\\'))
+            {
+                if (item.Contains("Thumbnails"))
+                {
+                    flag = 1;
+                    res +="\\"+ prevItem+"\\";
+                }
+                if (flag == 1)
+                {
+                    res += item + "\\";
+                }
+                prevItem = item;
+            }
+
+            res = res.Remove(res.Length - 1);
+            res = "~" + res;
+
+            return res;
+        }
+
+
+
+
+
 
     }
 }
+
+
+
+
+
+

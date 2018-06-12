@@ -14,11 +14,10 @@
 @using (Html.BeginForm())
 {
     <h2> @Model.deleting  <br /><br /> </h2>
-    <img src="@Model.deleting" />
+    <img src="@Url.Content(Model.deleting)" />
 
     <br /><br />
-    @Html.DisplayFor(m => m.date)
-
+    @Url.Content(Model.date)
 
     <input type="submit" id="deleteIt" value="Delete" />
 
@@ -26,7 +25,7 @@
 
 
 
-    <script>
+<script>
   $('#deleteIt').click(function () {
         $.post("@Url.Action("DeletePhoto")", function () {
         window.location.href = "Photos";
@@ -35,4 +34,4 @@
 
 
 
-    </script>
+</script>
