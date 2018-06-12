@@ -39,7 +39,7 @@ namespace WebApplication2.Models
             string cmd = reader.ReadString();
             JObject res = JsonConvert.DeserializeObject<JObject>(cmd);
             string outputdir=res["OutputDir"].ToString() ;
-            this.deleting=getFullPath(outputdir,this.deleting);
+            this.deleting=getFullPath(outputdir,del);
 
             PhotoDates();
         }

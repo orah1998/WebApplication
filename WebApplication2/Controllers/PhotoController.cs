@@ -41,8 +41,6 @@ namespace WebApplication2.Controllers
 
         public ActionResult view(string mip)
         {
-            needs = new DeletePhotoNeeds(mip);
-            mip = needs.deleting;
             string res = "";
             foreach (string item in mip.Split('\\'))
             {
